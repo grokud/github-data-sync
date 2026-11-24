@@ -1,0 +1,123 @@
+[
+  {
+    "id": 6572921808,
+    "node_id": "[REDACTED_NODE_ID]",
+    "number": 11782,
+    "title": "Agrega aporte al proyecto",
+    "state": "open",
+    "locked": false,
+    "draft": false,
+    "pull_request": {
+      "has_pr": true
+    },
+    "user": {
+      "login": "[REDACTED_USER]",
+      "id": 0,
+      "type": "User"
+    },
+    "assignee": null,
+    "assignees": [],
+    "labels": [],
+    "comments": 0,
+    "created_at": "2026-11-24T02:03:01Z",
+    "updated_at": "2026-11-24T02:04:52Z",
+    "closed_at": null,
+    "body": null
+  },
+  {
+    "id": 6564067586,
+    "node_id": "[REDACTED_NODE_ID]",
+    "number": 11781,
+    "title": "Feature calculator",
+    "state": "open",
+    "locked": false,
+    "draft": false,
+    "pull_request": {
+      "has_pr": true
+    },
+    "user": {
+      "login": "[REDACTED_USER]",
+      "id": 0,
+      "type": "User"
+    },
+    "assignee": null,
+    "assignees": [],
+    "labels": [],
+    "comments": 0,
+    "created_at": "2026-11-23T16:39:39Z",
+    "updated_at": "2026-11-24T09:28:41Z",
+    "closed_at": null,
+    "body": "[REDACTED_BODY]"
+  },
+  {
+    "id": 6560774919,
+    "node_id": "[REDACTED_NODE_ID]",
+    "number": 11780,
+    "title": "hello\nworld",
+    "state": "open",
+    "locked": false,
+    "user": {
+      "login": "[REDACTED_USER]",
+      "id": 0,
+      "type": "Bot"
+    },
+    "assignee": null,
+    "assignees": [],
+    "labels": [],
+    "comments": 0,
+    "created_at": "2026-11-23T13:49:30Z",
+    "updated_at": "2026-11-23T13:49:30Z",
+    "closed_at": null,
+    "body": "[REDACTED_BODY]"
+  },
+  {
+    "id": 6557811299,
+    "node_id": "[REDACTED_NODE_ID]",
+    "number": 11779,
+    "title": "Add Swaroopa collaboration update",
+    "state": "open",
+    "locked": false,
+    "draft": false,
+    "pull_request": {
+      "has_pr": true
+    },
+    "user": {
+      "login": "[REDACTED_USER]",
+      "id": 0,
+      "type": "User"
+    },
+    "assignee": null,
+    "assignees": [],
+    "labels": [],
+    "comments": 0,
+    "created_at": "2026-11-23T11:02:23Z",
+    "updated_at": "2026-11-23T11:02:23Z",
+    "closed_at": null,
+    "body": "[REDACTED_BODY]"
+  },
+  {
+    "id": 6546116502,
+    "node_id": "[REDACTED_NODE_ID]",
+    "number": 11778,
+    "title": "Melhoraia README",
+    "state": "open",
+    "locked": false,
+    "draft": false,
+    "pull_request": {
+      "has_pr": true
+    },
+    "user": {
+      "login": "[REDACTED_USER]",
+      "id": 0,
+      "type": "User"
+    },
+    "assignee": null,
+    "assignees": [],
+    "labels": [],
+    "comments": 0,
+    "created_at": "2026-11-22T18:32:09Z",
+    "updated_at": "2026-11-22T18:32:09Z",
+    "closed_at": null,
+    "body": "[REDACTED_BODY]"
+  }
+]
