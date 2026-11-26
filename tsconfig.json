@@ -29,8 +29,6 @@
     "verbatimModuleSyntax": true,
     "noEmit": true,
     
-
-
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
@@ -39,5 +37,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "include": ["src", "tests"]
 }
