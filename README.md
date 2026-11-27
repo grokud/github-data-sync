@@ -1,5 +1,6 @@
 # Project Structure
 
+```text
 src/
 ├── domain/
 │   ├── errors.ts
@@ -13,13 +14,14 @@ src/
 tests/
 ├── http-client.test.ts
 └── sync-service.test.ts
+```
 
 ## what is going on so far
 
-[X] done error.ts
-[X] done models.ts
-[X] writing http-client.ts
+- [x] Done `error.ts`
+- [x] Done `models.ts`
+- [x] Done `http-client.ts`
 
 ## what is the next move
 
-[] writing sync-service.ts
+- [ ] Writing `sync-service.ts`
