@@ -44,4 +44,15 @@ export class PayloadValidationError extends SyncError {
     }
 }
 
+export class NonRetryableHttpError extends SyncError {
+    readonly code = "NON_RETRYABLE_HTTP_ERROR";
+    readonly retryable = false;
+
+    constructor(
+        public readonly status: number,
+        message: string,
+    ) {
+        super(message);
+    }
+} 
 
