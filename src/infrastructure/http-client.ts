@@ -29,7 +29,7 @@ export interface RequestOptions {
     maxRetries?: number;
 }
 
-const RETRYABLE_STATUS_CODES = new Set<number>([429, 500, 503, 504]);
+const RETRYABLE_STATUS_CODES = new Set([429, 500, 503, 504]);
 
 const defaultSleep: SleepFn = (ms: number) => 
 new Promise<void>((resolve) => {
@@ -90,7 +90,7 @@ export class HttpClient {
         return `${base}/${path}`;
     }
 
-    private computeBackofMs(attempt: number) {
+    private computeBackoffMs(attempt: number) {
         const exponential = this.baseDelayMs * (2 ** attempt);
         const clamped = Math.min(exponential, this.maxDelayMs);
         const jitter = Math.floor(this.randomFn() * Math.min(250, clamped * 0.25));
@@ -164,7 +164,7 @@ export class HttpClient {
                         throw rateLimitError;
                     }
 
-                    const delayMs = retryAfterMs ?? this.computeBackofMs(attempt);
+                    const delayMs = retryAfterMs ?? this.computeBackoffMs(attempt);
                     await this.sleepFn(delayMs);
                     attempt += 1;
                     continue;
@@ -180,7 +180,7 @@ export class HttpClient {
                         throw transientError;
                     }
 
-                    await this.sleepFn(this.computeBackofMs(attempt));
+                    await this.sleepFn(this.computeBackoffMs(attempt));
                     attempt += 1;
                     continue;
                 }
@@ -210,7 +210,7 @@ export class HttpClient {
                         throw transientError;
                     }
 
-                    await this.sleepFn(this.computeBackofMs(attempt));
+                    await this.sleepFn(this.computeBackoffMs(attempt));
                     attempt += 1;
                     continue;
                 }
