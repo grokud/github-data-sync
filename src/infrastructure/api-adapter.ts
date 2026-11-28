@@ -43,17 +43,42 @@ export class GitHubIssuesAdapter {
     });
 
     const path = `/repos/${encodeURIComponent(this.owner)}/${encodeURIComponent(this.repo)}/issues?${params.toString()}`;
+
     const headers: Record<string, string> = {
       Accept: "application/vnd.github+json",
       ...requestOptions.headers,
     };
+
+    if (this.token) {
+      headers["Authorization"] = `Bearer ${this.token}`;
+    }
+
+    const rawPayload = await this.httpClient.getJson(path, {
+      ...requestOptions,
+      headers,
+    });
+
+    const parsedPage = RawPageArraySchema.safeParse(rawPayload);
+    if (!parsedPage.success) {
+      const issues = parsedPage.error.issues.map((issue) => issue.message);
+      throw new PayloadValidationError(`page: ${page}`, issues);
+    }
+
+    return parsedPage.data;
   }
 
   async fetchAllRawIssues(requestOptions: RequestOptions = {}) {
     const collected: unknown[] = [];
 
     for (let page = 1; page <= this.maxPages; page++) {
-      // implementation ...
+      const pageItems = await this.fetchPage(page, requestOptions);
+      collected.push(...pageItems);
+
+      if (pageItems.length === 0 || pageItems.length < this.perPage) {
+        break;
+      }
     }
+
+    return collected;
   }
 }
